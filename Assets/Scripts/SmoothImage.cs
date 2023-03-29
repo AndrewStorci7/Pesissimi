@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/**
+ * @Name    SmoothImage
+ * @Usage   Script that change th eposition of a RectTransform on loading scene
+ * 
+ * @Author  Andrea Storci aka AndrewDrink
+ */ 
 public class SmoothImage : MonoBehaviour
 {
     [SerializeField] Image img;

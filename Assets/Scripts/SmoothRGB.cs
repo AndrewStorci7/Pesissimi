@@ -4,8 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SmoothRGB : MonoBehaviour
-{
+
+/**
+ * @Name    SmoothRGB
+ * @Usage   Script that change the color gradient of a gameobject
+ * 
+ * @Author  Andrea Storci aka AndrewDrink
+ */
+public class SmoothRGB : MonoBehaviour {
+
     Color targetColor;
     Image btn;
     RawImage raw;
@@ -16,19 +23,14 @@ public class SmoothRGB : MonoBehaviour
     float constRGB = 0.1960784f;
     double valToAdd = 0.003;
 
-    void Awake()
-    {
-        
-    }
+    void Update() {
 
-    // Update is called once per frame
-    void Update()
-    {
         nameObject = songContainer.name;
         alpha = alpha == 0.6980f ? alpha : alpha + 0.005f;
         alpha2 = alpha2 == 0.8509804f ? alpha : alpha + 0.005f;
-        switch (nameObject)
-        {
+
+        switch (nameObject) {
+
             case "Bg":
                 raw = songContainer.GetComponent<RawImage>();
                 targetColor = new Color(raw.color.r, raw.color.g, raw.color.b, alpha2);
@@ -80,10 +82,5 @@ public class SmoothRGB : MonoBehaviour
                 text.color = targetColor;
                 break;
         }
-    }
-
-    private void Fn_smooth()
-    {
-
     }
 }

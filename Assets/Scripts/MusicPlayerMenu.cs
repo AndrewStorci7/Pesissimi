@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MusicPlayerMenu : MonoBehaviour
-{
+
+/**
+ * @Name    MusicPlayerMenu
+ * @Usage   Script that controls the progress of the initial video
+ * 
+ * @Author  Andrea Storci aka AndrewDrink
+ */
+public class MusicPlayerMenu : MonoBehaviour {
+
     public AudioClip[] clips;
     private AudioSource audioSource;
     [SerializeField] GameObject songName;
@@ -12,23 +19,21 @@ public class MusicPlayerMenu : MonoBehaviour
     string outText;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+
         text = songName.GetComponent<TextMeshProUGUI>();
         audioSource = FindObjectOfType<AudioSource>();
         audioSource.loop = false;
     }
 
-    private AudioClip GetRandomClip()
-    {
+    private AudioClip GetRandomClip() {
         return clips[Random.Range(0, clips.Length)];
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if ( !audioSource.isPlaying )
-        {
+    void Update() {
+
+        if ( !audioSource.isPlaying ) {
             audioSource.clip = GetRandomClip();
             audioSource.Play();
             outText = Truncate(audioSource.clip.ToString());
@@ -36,20 +41,16 @@ public class MusicPlayerMenu : MonoBehaviour
         }
     }
 
-    private string Truncate(string str)
-    {
+    private string Truncate( string str ) {
+
         string str_trunc = "";
         char c;
-        for(int i = 0; i < str.Length; i++)
-        {
+        for ( int i = 0; i < str.Length; i++ ) {
             c = str[i];
-            if(c != '.')
-            {
+            if ( c != '.' )
                 str_trunc += c; 
-            } else
-            {
+            else
                 break;
-            }
         }
         return str_trunc;
     }

@@ -7,6 +7,13 @@ using UnityEngine.UI;
 using System.Text;
 using TMPro;
 
+/**
+ * @Name    MainMenuScript
+ * @Usage   Script that create a new Lobby, Room
+ *          Also allow the player to enter an existing Room or Lobby
+ * 
+ * @Author  Andrea Storci aka AndrewDrink
+ */
 public class MainMenuScript : MonoBehaviourPunCallbacks
 {
     [SerializeField] TMP_InputField create;
