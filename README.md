@@ -1,6 +1,8 @@
 # Pesissimi
 Pesissimi's Game, classic hide and seek
 
+🛠️ **Work in progress** 🛠️
+
 ## History of the Game 🎮
 This game was designed to thank my company of friends with whom we have been spending days together for years. The game was inspired by Amongus, why, well it was certainly part of our days and our fat laughs.
 
